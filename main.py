@@ -49,8 +49,8 @@ def calc_total(list_deck: list):
             solution_1 = solution_1 + card
             solution_2 = solution_2 + card
 
-    print(solution_1)  # Printing just for keeping log
-    print(solution_2)
+    # print(solution_1)  # Printing just for keeping log
+    # print(solution_2)
 
     if (solution_1 < 21 and solution_1 >= solution_2) or solution_1 == 21:
         return solution_1
@@ -73,6 +73,7 @@ def dealer_cards():
     while True:
         print("Dealer's cards:", end=" ")
         print(*dealer_deck)
+        print(dealer_total)
 
         if dealer_total < 17:
             dealer_deck.append(random.choice(cards))
@@ -94,6 +95,8 @@ def dealer_cards():
 
 
 def final_score():
+    player_total = calc_total(player_deck)
+    dealer_total = calc_total(dealer_deck)
     print("Your cards:",end=" ")
     print(*player_deck)
     print(f"Your total: {player_total} ")
@@ -103,10 +106,8 @@ def final_score():
 
 
 def check_winner():
-    print(player_deck)
-    print(dealer_deck)
     print("Yahallo!")
-    pass
+    
 
 
 player_deck = make_deck()
