@@ -1,6 +1,5 @@
 import random
 
-
 cards = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_total = 0
 dealer_total = 0
@@ -14,7 +13,6 @@ def make_deck() -> list:
 
 
 def deal_cards():
-
     while True:
         player_total = calc_total(player_deck)
 
@@ -61,6 +59,7 @@ def calc_total(list_deck: list):
     elif (solution_1 and solution_2) > 21:
         return min([solution_1, solution_2])
 
+
 # if the dealer's cards total is less than 17 he has to hit
 # if it is more than 17 he stops
 # if it is equal to 21 he wins
@@ -84,7 +83,7 @@ def dealer_cards():
             final_score()
             break
 
-        elif dealer_total < 21: 
+        elif dealer_total < 21:
             check_winner()
             break
 
@@ -97,17 +96,17 @@ def dealer_cards():
 def final_score():
     player_total = calc_total(player_deck)
     dealer_total = calc_total(dealer_deck)
-    print("Your cards:",end=" ")
+    print("Your cards:", end=" ")
     print(*player_deck)
     print(f"Your total: {player_total} ")
-    print("Dealer's cards:",end=" ")
-    print(*dealer_deck)
+    print("Dealer's cards:", end=" ")
+    print(*dealer_deck)  # * removes brackets
     print(f"Dealer's total: {dealer_total} ")
 
 
 def check_winner():
     print("Yahallo!")
-    
+    # TODO not complete lol
 
 
 player_deck = make_deck()
@@ -119,3 +118,4 @@ print(dealer_deck)
 deal_cards()
 dealer_cards()
 check_winner()
+final_score()
