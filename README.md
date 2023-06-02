@@ -1,2 +1,2 @@
 # Blackjack
-A simple command-line game of Blackjack
+A command-line game of Blackjack
